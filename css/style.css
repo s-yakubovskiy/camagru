@@ -1,0 +1,363 @@
+input[type=text], input[type=password], input[type=submit], input[type=email] {
+    border-radius: 4px;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+}
+
+body {
+    background-color: #ffffff;
+    width: 100%;
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 14pt;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    max-width: 935px;
+    margin: 0 auto;
+}
+
+.whole_body {
+    height: auto;
+    min-height: calc(100vh - 40px);
+    position: relative;
+    background-color: rgb(250, 250, 250);
+}
+
+.error {
+    color: rgb(187, 17, 17);
+}
+
+.instagram-btn {
+    border-radius: 4px;
+    outline: 0;
+    width: 100%;
+    padding: 6px;
+    background: rgb(255,100,88);
+    background: linear-gradient(90deg, rgba(255,100,88,1) 0%, rgba(255,155,51,1) 75%, rgba(255,84,255,1) 100%);
+    opacity: .9;
+    color: #FFFFFF;
+    font-size: 14pt;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.instagram-btn:hover {
+    opacity: 1;
+}
+
+/* Loader */
+
+.loader-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.loader-hidden {
+    display: none;
+}
+
+.loader {
+    width: 5rem;
+    height: 5rem;
+    border: 0.2rem solid rgb(219, 219, 219);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: loader 750ms ease infinite;
+}
+
+@keyframes loader {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Navigation bar */
+.top-nav {
+    height: 60px;
+    background-color: white;
+    border-bottom: 1px solid rgb(219, 219, 219);
+}
+
+.top-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a.nav-logo {
+    padding: 0;
+    text-decoration: none;
+}
+
+.nav-logo-text {
+    font-size: 30pt;
+    line-height: 60px;
+    font-weight: 100;
+    padding: 0;
+    color: #f35626;
+    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 40s infinite linear;
+}
+
+@-webkit-keyframes hue {
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+    to {
+        -webkit-filter: hue-rotate(-360deg);
+    }
+}
+
+.top-nav .right-side {
+    display: flex;
+    flex-direction: row;
+    line-height: 14px;
+}
+
+.top-nav-icon {
+    padding: 17px;
+}
+
+.login-button,
+.login-button:focus {
+    font-size: 16px;
+    color: #4bacb8;
+}
+
+/* Footer */
+
+.footer {
+    color: #696969;
+    height: 40px;
+    font-size: 1rem;
+    border-top: 1px solid rgb(219, 219, 219);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Profile page */
+.my_account_wrapper {
+    display: flex;
+    padding: 1rem 0;
+    min-height: calc(100% - 100px);
+}
+
+.sidebar {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-width: 252px;
+    text-align: left;
+    background: white;
+}
+
+.content {
+    flex-grow: 3;
+    padding-left: 10px;
+}
+
+.content_body {
+    border-radius: 4px;
+    border: 1px solid rgb(219, 219, 219);
+    background-color: white;
+    padding: 16px;
+    height: 100%;
+}
+
+.content_body h3 {
+    margin: 0 0 1rem;
+}
+
+.content_body fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+.content_body legend {
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+.acct_details {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.content_body p {
+    margin: 12px 0;
+}
+
+.side_menu {
+    display: flex;
+}
+
+.side_menu a i.fas {
+    margin-right: 10px;
+}
+
+.side_menu a {
+    color: black;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    width: 100%;
+    padding: 8px;
+    margin: 8px;
+    font-size: 16px;
+}
+
+/* instagram layout */
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Login Form */
+.login-page {
+    width: 100%;
+    padding: 8vh 0 0;
+    margin: auto;
+}
+
+.form {
+    margin: 1rem auto;
+    max-width: 360px;
+    background: #FFFFFF;
+    padding: 1rem;
+    text-align: center;
+	border: 1px solid rgb(219, 219, 219);
+}
+
+.form-check-label {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+}
+
+form input[type=password], form input[type=text], form input[type=email] {
+    border-radius: 4px;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100% !important;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14pt;
+}
+
+.login_form input[type=submit] {
+    border-radius: 4px;
+    outline: 0;
+    width: 100%;
+    border: 0;
+    padding: 6px;
+    background: rgb(255,100,88);
+    background: linear-gradient(90deg, rgba(255,100,88,1) 0%, rgba(255,155,51,1) 75%, rgba(255,84,255,1) 100%);
+    opacity: .9;
+    color: #FFFFFF;
+    font-size: 14pt;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.login_form input[type=submit]:hover {
+    opacity: 1;
+}
+
+div .save_change {
+    border: none;
+    padding: 8px;
+}
+
+div .delete_btn {
+    outline: 0;
+    width: 100%;
+    border: none;
+    padding: 8px;
+    background-color: rgb(189, 32, 32);
+    color: white;
+    cursor: pointer;
+    font-size: 14pt;
+}
+
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12pt;
+}
+
+.form .message a {
+    color: #4bacb8;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 960px) {
+    a.nav-logo {
+        margin-left: 15px;
+    }
+
+    .login-button {
+        margin-right: 15px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .my_account_wrapper {
+        flex-wrap: wrap;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar .side_menu:last-child a {
+        border: none;
+    }
+
+    .content {
+        padding-left: 0;
+        margin-top: 8px;
+    }
+
+    .content_body {
+        min-height: 253px;
+    }
+
+    .nav-logo-text {
+        font-size: 22pt;
+    }
+
+    .top-nav-icon {
+        padding: 0 10px;
+    }
+}
