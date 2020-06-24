@@ -15,4 +15,5 @@
     $DB_USER = 'root';
     $DB_PASSWORD = 'helloworld';
     $DB_NAME = 'db_camagru';
+    $TEST_VAR = getenv('MYSQL_SERVICE_HOST');
 ?>
