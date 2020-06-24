@@ -2,7 +2,7 @@
 	include_once 'database.php';
 
 	try {
-		$conn = new PDO("mysql:host=$DB_DNS;port=$DB_PORT", $DB_USER, $DB_PASSWORD);
+		$conn = new PDO("mysql:host=$DB_HOST;port=$DB_PORT", $DB_USER, $DB_PASSWORD);
 		// set the PDO error mode to exception
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$conn->exec("CREATE DATABASE IF NOT EXISTS $DB_NAME");
