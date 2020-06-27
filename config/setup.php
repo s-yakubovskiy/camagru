@@ -36,7 +36,7 @@
 															ON DELETE CASCADE
 															ON UPDATE CASCADE)");
 		//echo("Table 'likes' created!<br />");
-#        $conn->exec("INSERT INTO users (id, login, passwd, email, notification, token, verified) VALUES (1,'root','0a25f55d7308eca6b9567a7ed3bd1b46327f0f1ffdc804dd8bb5af40e88d78b88df0d002a89e2fdbd5876c523f1b67bc44e9f87047598e7548298ea1c81cfd73', 'root@camagru.teh', 0, 'token', 1)");
+        $conn->exec("INSERT IGNORE INTO users (id, login, passwd, email, notification, token, verified) VALUES (1,'root','0a25f55d7308eca6b9567a7ed3bd1b46327f0f1ffdc804dd8bb5af40e88d78b88df0d002a89e2fdbd5876c523f1b67bc44e9f87047598e7548298ea1c81cfd73', 'root@camagru.teh', 0, 'token', 1)");
         // create default user
 	} catch(PDOException $e)
 	{
