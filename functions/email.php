@@ -2,6 +2,7 @@
 	function email_verify($email, $login, $hash) {
 		$to      = $email; // Send email to our user
 		$subject = 'Signup | Verification from Camagru'; // Give the email a subject 
+        $INGRESS = getenv('INGRESS'); // from k8s configmap
 		$message = '
 		
 		Thanks for signing up to Camagru! 
@@ -9,7 +10,7 @@
 		'.$login.'
 				
 		Please click this link to activate your account:
-		http://localhost:5000/verify.php?email='.$email.'&hash='.$hash.'
+		https://'.$INGRESS.'/verify.php?email='.$email.'&hash='.$hash.'
 		
 		'; // Our message above including the link
 							
