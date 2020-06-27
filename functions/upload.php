@@ -20,12 +20,12 @@
 		exit();
 	}
 	$img = $_POST['upload'];
-    $folderPath = getenv("FILESTORAGE_PATH")
-    if $folderPath == false:
+    $folderPath = getenv("FILESTORAGE_PATH");
+    if ($folderPath == false) {
         $folderPath = "../upload"
 	    if (!file_exists("../upload/"))
             mkdir ("../upload/");
-
+    }
 	// actual code
     $image_parts = explode(";base64,", $img);
     $image_type_aux = explode("image/", $image_parts[0]);
