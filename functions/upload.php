@@ -20,9 +20,12 @@
 		exit();
 	}
 	$img = $_POST['upload'];
-	if (!file_exists("../upload/"))
-		mkdir ("../upload/");
-	$folderPath = "../upload/";
+    $folderPath = getenv("FILESTORAGE_PATH")
+    if $folderPath == false:
+        $folderPath = "../upload"
+	    if (!file_exists("../upload/"))
+            mkdir ("../upload/");
+
 	// actual code
     $image_parts = explode(";base64,", $img);
     $image_type_aux = explode("image/", $image_parts[0]);
@@ -31,7 +34,7 @@
     $fileName = uniqid() . '.png';
 	$file = $folderPath . $fileName;
     file_put_contents($file, $image_base64);
-	//print_r($fileName);
+	print_r($file);
 	require_once '../config/setup.php';
 	try {
 		date_default_timezone_set('America/Los_Angeles');
