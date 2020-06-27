@@ -22,21 +22,20 @@
 	$img = $_POST['upload'];
     $folderPath = getenv("FILESTORAGE_PATH");
     if ($folderPath == false) {
-        $folderPath = "../upload"
+        $folderPath = "../upload";
 	    if (!file_exists("../upload/"))
             mkdir ("../upload/");
     }
 	// actual code
-    $folderPath = "/uploads/"
     $image_parts = explode(";base64,", $img);
     $image_type_aux = explode("image/", $image_parts[0]);
     $image_type = $image_type_aux[1];
-	$image_base64 = base64_decode($image_parts[1]);
+    $image_base64 = base64_decode($image_parts[1]);
     $fileName = uniqid() . '.png';
-	$file = $folderPath . $fileName;
+    $file = $folderPath . $fileName;
     file_put_contents($file, $image_base64);
-	print_r($file);
-	require_once '../config/setup.php';
+    print_r($file);
+    require_once '../config/setup.php';
 	try {
 		date_default_timezone_set('America/Los_Angeles');
 		$login = $_SESSION['logged_user'];
