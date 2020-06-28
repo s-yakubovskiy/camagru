@@ -30,14 +30,15 @@ if (!isset($_SESSION["logged_user"])) {
             ?>
             <form action='functions/merge.php' method="POST" id="preview" class="preview-form">
                 <?php
-                if ($_GET['id'] === 'use_cam') {
-                    echo "<script> activateSticker(); </script>"
-                    ?>
+                if ($_GET['id'] === 'use_cam') {?>
+                    <script>activateSticker();</script>
+
                     <div class="camera">
                         <video id="video">Video stream not available.</video>
                         <img id="filter_tmp">
                         <canvas id="canvas"></canvas>
                     </div>
+
                     <?php
                 }
 

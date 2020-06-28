@@ -27,9 +27,7 @@
 			<?php require_once ('template/menu_bar.php')?>
 
 			<div class="wrapper">
-				<div class="gallery" id="gallery">
-					
-				</div>
+				<div class="gallery" id="gallery"></div>
 				<div class="loader-wrapper loader-hidden" id="loader">
                     <div class="loader"></div>
                 </div>

@@ -10,9 +10,16 @@
     // therefore must use earlier version or change the default plugin in .env file
     
     // I can use 127.0.0.1 as $DB_DNS if I can open mysql server on this mac.
-    $DB_HOST = getenv('DB_HOST'); //or try 172.17.0.2
-    $DB_PORT = getenv('DB_PORT');
-    $DB_USER = getenv('DB_USER');
-    $DB_PASSWORD = getenv('DB_PASSWORD');
-    $DB_NAME = getenv('DB_NAME');
+
+    $host = getenv('DB_HOST');
+    $port = getenv('DB_PORT');
+    $user = getenv('DB_USER');
+    $password = getenv('DB_PASSWORD');
+    $name = getenv('DB_NAME');
+
+    $DB_HOST = $host ? $host : 'localhost';
+    $DB_PORT = $port ? $port : '3306';
+    $DB_USER = $user ? $user : 'root';
+    $DB_PASSWORD = $password ? $password : 'levon123';
+    $DB_NAME = $name ? $name : 'db_camagru';
 ?>
