@@ -5,8 +5,6 @@ function likePost(i) {
     request.setRequestHeader("Content-Type", "application/json");
     request.onreadystatechange = function () {
         if (request.readyState === 4 && request.status === 200) {
-            //var jsonData = JSON.parse(request.response);
-            //console.log(jsonData);
             var num_likes = document.getElementById('num_likes');
             num_likes.innerHTML = request.response;
         }

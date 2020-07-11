@@ -34,7 +34,6 @@ function unsetCookie() {
 function callFromCookie() {
 
     if (document.cookie) {
-        console.log(document.cookie);
         document.getElementById("login").value = getCookie("log", 0);
         document.getElementById("email").value = getCookie("log", 1);
     }
