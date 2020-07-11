@@ -111,7 +111,15 @@ function loadPosts() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             // xhr.response это строка
             if (xhr.response) {
-                var jsonData = JSON.parse(xhr.response);
+                var jsonData = [];
+                try
+                {
+                    jsonData = JSON.parse(xhr.response);
+                }
+                catch(e)
+                {
+                    console.log('Invalid json: parse error');
+                }
                 var gallery_list = document.getElementById('gallery');
 
                 for (var i = 0; i < jsonData.length; i++) {

@@ -1,8 +1,3 @@
-window.onload = function() {
-	// if (document.getElementById('startbutton')) {
-	// 	document.getElementById('startbutton').disabled = true;
-	// }
-};
 function changePreview() {
 	if (document.getElementsByClassName('sticker_lists_clickable').disabled == false) {
 		document.getElementById("filter_tmp").src = document.querySelector('input[name="source"]:checked').value;
