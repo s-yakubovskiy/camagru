@@ -10,9 +10,9 @@
 		mkdir ("../tmp/");
 
     $folderPath = "../tmp/";
-	$sourceImage = $_POST['source'];
-	$img = $_POST['test'];
-	$image_parts = explode(";base64,", $img);
+	$sticker = $_POST['source'];
+	$selfie = $_POST['test'];
+	$image_parts = explode(";base64,", $selfie);
     $image_type_aux = explode("image/", $image_parts[0]);
     $image_type = $image_type_aux[1];
 	$destImage = base64_decode($image_parts[1]);
@@ -20,25 +20,25 @@
 	$file = $folderPath . $fileName;
 	file_put_contents($file, $destImage);
 	$destImage = $file;
-	list($srcWidth, $srcHeight) = getimagesize($sourceImage);
 	list($destWidth, $destHeight) = getimagesize($destImage);
-	$src = imagecreatefrompng($sourceImage);
 	$dest = imagecreatefrompng($destImage);
 
-	//$tmppp = $destWidth . "," . $destHeight . "," . $srcHeight . "," .$srcWidth;
-	//file_put_contents('tmp.txt', $tmppp);
-	$src_xPos = ($destWidth - $srcHeight) / 2;
-	$src_yPos = ($destHeight - $srcHeight) / 2;
+	if (isset($sticker)) {
+        $src_cropXPos = 0;
+        $src_cropYPos = 0;
 
-	$src_cropXPos = 0;
-	$src_cropYPos = 0;
+        list($srcWidth, $srcHeight) = getimagesize($sticker);
+	    $src = imagecreatefrompng($sticker);
+        $src_xPos = ($destWidth - $srcHeight) / 2;
+        $src_yPos = ($destHeight - $srcHeight) / 2;
+    	imagecopy($dest, $src, $src_xPos, $src_yPos, $src_cropXPos, $src_cropYPos, $srcWidth, $srcHeight);
+	    imagedestroy($src);
+    }
 
-	imagecopy($dest, $src, $src_xPos, $src_yPos, $src_cropXPos, $src_cropYPos, $srcWidth, $srcHeight);
 	imagepng($dest, $file);
 	$type = pathinfo($file, PATHINFO_EXTENSION);
 	$tmp = file_get_contents($file);
 	$preview = 'data:image/' . $type . ';base64,' . base64_encode($tmp);
-	imagedestroy($src);
 	imagedestroy($dest);
 	$index = 0;
 	while (isset($_SESSION['img_tmp'][$index]) && $_SESSION['img_tmp'][$index])
