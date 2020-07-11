@@ -6,40 +6,40 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST' && realpath(__FILE__) == realpath($_SER
 }
 
 session_start();
-//if ($_POST["passwd"] !== $_POST["passwd_conf"]) {
-//    echo "ERROR\n";
-//    $_SESSION["error"] = "Your password does not match";
-//    header("Location: ../create.php");
-//    exit();
-//}
-//if (!$_POST["submit"] === "submit" || !$_POST["login"] || !$_POST["passwd"]) {
-//    echo "ERROR\n";
-//    $_SESSION["error"] = "Please verify login/password";
-//    header("Location: ../create.php");
-//    exit();
-//}
-//if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-//    echo "ERROR\n";
-//    $_SESSION["error"] = "Invalid email address!";
-//    header("Location: ../create.php");
-//    exit();
-//}
-//if (strlen($_POST["login"]) > 25 || strlen($_POST["login"]) < 3) {
-//    $_SESSION["error"] = "Login id must be between 3 and 25 characters.";
-//    header("Location: ../create.php");
-//    exit();
-//}
-//if (strlen($_POST["passwd"]) > 25 || strlen($_POST["passwd"]) < 8) {
-//    $_SESSION["error"] = "Password must be between 8 and 25 characters.";
-//    header("Location: ../create.php");
-//    exit();
-//}
-//if (!preg_match("#[0-9]+#", $_POST["passwd"]) || !preg_match("#[a-z]+#", $_POST["passwd"])
-//    || !preg_match("#[A-Z]+#", $_POST["passwd"]) || !preg_match("#\W+#", $_POST["passwd"])) {
-//    $_SESSION["error"] = "Password must include at least one letter, CAPS, number, and special character.";
-//    header("Location: ../create.php");
-//    exit();
-//}
+if ($_POST["passwd"] !== $_POST["passwd_conf"]) {
+    echo "ERROR\n";
+    $_SESSION["error"] = "Your password does not match";
+    header("Location: ../create.php");
+    exit();
+}
+if (!$_POST["submit"] === "submit" || !$_POST["login"] || !$_POST["passwd"]) {
+    echo "ERROR\n";
+    $_SESSION["error"] = "Please verify login/password";
+    header("Location: ../create.php");
+    exit();
+}
+if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+    echo "ERROR\n";
+    $_SESSION["error"] = "Invalid email address!";
+    header("Location: ../create.php");
+    exit();
+}
+if (strlen($_POST["login"]) > 25 || strlen($_POST["login"]) < 3) {
+    $_SESSION["error"] = "Login id must be between 3 and 25 characters.";
+    header("Location: ../create.php");
+    exit();
+}
+if (strlen($_POST["passwd"]) > 25 || strlen($_POST["passwd"]) < 8) {
+    $_SESSION["error"] = "Password must be between 8 and 25 characters.";
+    header("Location: ../create.php");
+    exit();
+}
+if (!preg_match("#[0-9]+#", $_POST["passwd"]) || !preg_match("#[a-z]+#", $_POST["passwd"])
+    || !preg_match("#[A-Z]+#", $_POST["passwd"]) || !preg_match("#\W+#", $_POST["passwd"])) {
+    $_SESSION["error"] = "Password must include at least one letter, CAPS, number, and special character.";
+    header("Location: ../create.php");
+    exit();
+}
 
 require_once '../config/setup.php';
 require_once 'email.php';
