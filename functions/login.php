@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] !='POST' && realpath(__FILE__) == realpath( $_SER
 	header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
 	exit();
 }
-
+ob_start();
 session_start();
 require_once '../config/setup.php';
 

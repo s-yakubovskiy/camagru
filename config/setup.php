@@ -1,5 +1,7 @@
 <?php
 	include_once 'database.php';
+    // warning remover
+	//error_reporting(E_ERROR);
 
 	try {
 		$conn = new PDO("mysql:host=$DB_HOST;port=$DB_PORT", $DB_USER, $DB_PASSWORD);

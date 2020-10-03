@@ -17,9 +17,9 @@
     $password = getenv('DB_PASSWORD');
     $name = getenv('DB_NAME');
 
-    $DB_HOST = $host ? $host : 'localhost';
+    $DB_HOST = $host ? $host : '192.168.99.101';
     $DB_PORT = $port ? $port : '3306';
     $DB_USER = $user ? $user : 'root';
-    $DB_PASSWORD = $password ? $password : 'levon123';
+    $DB_PASSWORD = $password ? $password : 'helloworld';
     $DB_NAME = $name ? $name : 'db_camagru';
 ?>
