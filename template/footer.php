@@ -6,5 +6,5 @@ if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
 }
 ?>
 <footer class="footer">
-    <span>&copy; 2020 yharwyn- agottlie   |   hosted on k8s dynamic updates [120s] <3 </span>
+    <span>&copy; 2020 agottlie</span>
 </footer>
